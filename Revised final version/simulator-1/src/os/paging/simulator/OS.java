@@ -34,7 +34,7 @@ public class OS {
         }
     }
 
-    private void create_Free_Partition(int start_loc, int size) {
+    private void createFreePartition(int start_loc, int size) {
         Partition new_fp = new Partition(start_loc, size);
 
         //Binary search input on start loc
@@ -79,7 +79,7 @@ public class OS {
     }
 
     public Process deallocate(Process process) {
-        create_Free_Partition(process.getStartMemLoc(), process.getProcSize());
+        createFreePartition(process.getStartMemLoc(), process.getProcSize());
         process.setStartMemLoc(-1);
 
         allocateAvailableResources();
@@ -120,7 +120,7 @@ public class OS {
             freePartitions.remove(fpPos);
 
             if (new_size != 0) {
-                create_Free_Partition(new_start, new_size);
+                createFreePartition(new_start, new_size);
             }
             adjustPartitionPointers();
 
