@@ -72,9 +72,9 @@ public class OSTest {
                             if (windows.getProcessTable().size() > 1) {
                                 int idx = windows.getProcessTable().size() - 2;
                                 Process process = windows.getProcessTable().get(idx);
-                                
+
                                 idx = windows.getProcessTable().size() - 1;
-                                
+
                                 Process next = windows.getProcessTable().get(idx);
                                 process.setNextPCB(next);
                             }
